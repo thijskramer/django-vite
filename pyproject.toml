@@ -1,2 +1,13 @@
 [tool.black]
 line-length = 79
+
+[tool.pytest.ini_options]
+DJANGO_SETTINGS_MODULE = "tests.settings"
+django_find_project = false
+pythonpath = "."
+addopts = '''
+  --cov=django_vite
+  --cov-report html
+  --cov-report term-missing
+  --cov-branch
+'''
